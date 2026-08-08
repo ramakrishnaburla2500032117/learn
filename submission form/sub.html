@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>From Submission </title>
+    <style>
+        body{
+            background-color:rgb(226, 229, 229);
+            margin: 15;
+        }
+            h1{
+                text-align: center;
+                color: rgb(18, 19, 18);
+            }
+            label{
+                display: block;
+                padding: 10px;
+                margin-top: 10px;
+                color: rgb(244, 242, 242);
+                
+            }
+            input{
+                width: 60%;
+                padding: 10px;
+                margin-top: 5px;
+            }
+            button{
+                margin-top: 50px;
+                padding: 10px 50px;
+                background-color: rgb(230, 228, 234);
+                color: black;
+                border: none;
+                cursor: pointer;    
+                box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+
+            }
+            button:hover{
+                background-color: rgb(7, 227, 110);
+            }
+           .container{
+                width: 40%;
+                margin: 0 auto;
+                padding:50px;
+                background-color: #262626;
+                border-radius: 10px;
+                border: 1px solid #8c7e7e;
+                display:grid;
+                place-items: center;
+                height: 50vh;
+            }
+            .box{
+                width: 100%;
+                height: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+    </style>
+    
+    </head>
+<body>
+        <main>
+            <h1>Form submission Demo</h1>
+            <form class="container" id="feedform" onsubmit="checkAge(event)">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name_na" placeholder="Enter your name" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email_na" placeholder="Enter your email" required>
+                <label for="age">Age:</label>
+                <input type="number" id="age" name="age_na" placeholder="Enter your age" required><br>
+                <button type="submit">Submit</button>
+                <p id="result"></p>
+            </from>
+        </main>
+       <script>
+function checkAge(event) {
+    event.preventDefault();
+
+    const age = parseInt(document.getElementById("age").value);
+    const result = document.getElementById("result");
+
+    if (age < 18) {
+        result.innerHTML = "You are a minor.";
+    } else {
+        result.innerHTML = "You are a major.";
+    }
+}
+</script>
+       </body>
+       </html>
+>
